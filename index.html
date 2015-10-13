@@ -109,10 +109,10 @@
             <h3>Disadvantages?</h3>
 
             <aside class="notes">
-              <p>Less packages</p>
-              <p>Younger build system</p>
+              <p>Less packages 1500-4600</p>
+              <p>Younger build system (2 years old)</p>
               <p>Harder to configure for those who don't know streams based development</p>
-              <p>Poor error traces</p>
+              <p>Poor error traces (Due to steam management)</p>
             </aside>
           </section>
           <section>
@@ -122,6 +122,7 @@
 
             <aside class="notes">
               <p>This is thanks to the asynchronous task execution</p>
+              <p>Theres no file system access in the middle of tasks</p>
             </aside>
           </section>
           <section>
@@ -131,7 +132,7 @@
               <p>Currently grunt is being used more than grulp among the web projects</p>
               <p>But the developers show more interest on Gulp</p>
               <p>Gulp has more developers on the project than grunt</p>
-              <p></p>
+              <p>It is possible that gulp become stronger due to 3rd party colaborations</p>
             </aside>
           </section>
         </section>
@@ -222,6 +223,13 @@ gulp.task('styles', function() {</code></pre>
 <pre><code class="lang-javascript">gulp.task('default', function() {
   gulp.start('watch');
 });</code></pre>
+          </section>
+          <section>
+            <h2>The tricky asynchronous</h2>
+
+            <aside class="notes">
+              <p>Show up example 05</p>
+            </aside>
           </section>
           <section>
             <h2>Tips and tricks!</h2>
