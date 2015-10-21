@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Gulp Presentation</title>
+    <title>Cordova Presentation</title>
 
     <meta name="description" content="A presentation about Gulp, the tool to help you in your frontend workflow development">
     <meta name="author" content="Alberto Fernandez">
@@ -53,234 +53,246 @@
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
-          <h1 style="font-family: 'Damion'; text-transform: none;">Gulp</h1>
-          <h2>The Streaming Build System</h2>
-          <img class="stretch" src="/img/gulp-logo.png">
+          <br />
+          <img src="/img/cordova-logo-newbrand-textonly.svg">
+          <img  src="/img/cordova-bot.png">
 
           <aside class="notes">
             <p>Introduction</p>
-            <p>What is gulp?</p>
-            <p>Workflow automation</p>
-            <p>Repetitive tasks like pain in the ass. (SASS Build)</p>
           </aside>
         </section>
         <section>
-          <h2>Some history</h2>
+          <h2>Overview</h2>
 
-          <img class="fragment" src="/img/ant-logo.png" height="100px">
-          <img class="fragment" src="/img/node-logo.png" height="100px">
-          <img class="fragment" src="/img/grunt-logo.svg" height="100px">
-          <img class="fragment" src="/img/gulp-logo.png" height="100px">
+          <ul>
+            <li class="fragment">Apache Cordova is an open-source mobile development framework</li>
+            <li class="fragment">Develop mobile apps with web technologies</li>
+            <li class="fragment">Relies on standard-compliant API bindings to access device "peripherals"</li>
+            <li class="fragment">Maintained and developed by the Apache Software Foundation</li>
+            <li class="fragment">Target multiple platforms with one code base</li>
+          </ul>
 
           <aside class="notes">
-            <p>Build Automation: Ant (Java) 2000</p>
-            <p>Node release: execute JS in local machine 2009</p>
-            <p>Before build systems: node packages & tools</p>
-            <p>First were Grunt 2011</p>
-            <p>Gulp came in 2013</p>
+            <p>All source code is open</p>
+            <p>You can use HTML5, CSS3, JS</p>
+            <p>JS interfaces</p>
+            <p>Free to use</p>
           </aside>
         </section>
         <section>
-          <section>
-            <h1><span style="color: #E48632;font-size: .8em;margin-left: -40px;">Grunt</span> <span style="color: #ddd;font-family: monospace; font-size: .6em;vertical-align: 10px;">VS</span> <span style="font-family: 'Damion'; text-transform: none;">Gulp</span></h1>
+          <h2>Why & When</h2>
 
-            <p>
-              <img src="/img/grunt-logo.svg" height="200px" style="margin-right: 150px;">
-              <img src="/img/gulp-logo.png" height="200px" style="margin-right: 60px;">
-            </p>
-
-            <aside class="notes">
-              <p>Here comes the dilemma</p>
-              <p>Grunt is config-oriented</p>
-              <p>Gulp is stream based configs</p>
-            </aside>
-          </section>
-          <section>
-            <h3>Advantages<br>of<br><span style="font-family: 'Damion'; text-transform: none; margin-right: 10px;">Gulp</span> <span style="color: #ddd;font-family: monospace; font-size: .6em;">against</span> <span style="color: #E48632;font-size: .8em;">Grunt</span></h3>
-
-            <aside class="notes">
-              <p>More readable than grunt</p>
-              <p>Asynchronous execution of tasks</p>
-              <p>Advanced ways to configure the workflow system</p>
-              <p>Could be faster (But you have to know how to configure it)</p>
-            </aside>
-          </section>
-          <section>
-            <h3><span>Disadvantages</span><span style="margin-left: 10px; display: inline-block; transform: scale(3) rotate(10deg);">?</span></h3>
-
-            <aside class="notes">
-              <p>Less packages 1500-4600</p>
-              <p>Younger build system (2 years old)</p>
-              <p>Harder to configure for those who don't know streams based development</p>
-              <p>Poor error traces (Due to steam management)</p>
-            </aside>
-          </section>
-          <section>
-            <h2>S0m3 numb3r5</h2>
-
-            <img src="/img/some-numbers-01.png" class="fragment">
-
-            <aside class="notes">
-              <p>havong said that which one would you think last less in complete a js and css build task?</p>
-              <p>This is thanks to the asynchronous task execution</p>
-              <p>Theres no file system access in the middle of tasks</p>
-            </aside>
-          </section>
-          <section>
-            <img src="/img/some-numbers-02.png" class="stretch">
-
-            <aside class="notes">
-              <p>Currently grunt is being used more than grulp among the web projects</p>
-              <p>But the developers show more interest on Gulp</p>
-              <p>Gulp has more developers on the project than grunt</p>
-              <p>It is possible that gulp become stronger due to 3rd party colaborations</p>
-            </aside>
-          </section>
-        </section>
-        <section>
-          <section>
-            <h2>How to gulp</h2>
-
-<pre class="fragment"><code class="lang-shell">npm install -g gulp</code></pre>
-
-            <aside class="notes">
-              <p>The first we have to do is to install it globaly on our machine</p>
-            </aside>
-          </section>
-          <section>
-            <p><i style="font-size: 1.5em;vertical-align: -10px;color: #EB4A4B;" class="devicons devicons-gulp"></i>gulpfile.js</p>
-
-<pre class="fragment"><code class="lang-javascript">var gulp = require('gulp');</code></pre><pre class="fragment"><code class="lang-javascript">
-gulp.task('default', function () {
-  console.log('Gulping world!');
-});</code></pre>
-
-            <aside class="notes">
-              <p>After this open up yhe terminal and show it working</p>
-            </aside>
-          </section>
-          <section>
-            <h2>The pipe theory</h2>
-
-            <img class="stretch" src="/img/pipe-theory.png">
-
-            <aside class="notes">
-              <p>All you knows tht I like to change the way that you think</p>
-              <p>You have to think in a different way when you work with node-like streams</p>
-            </aside>
-          </section>
-          <section>
-            <img src="/img/pipe-theory-2.png">
-          </section>
-          <section>
-            <h2>A simple style task</h2>
-<div style="font-size: .8em;" class="stretch">
-<pre><code class="lang-javascript">var gulp = require('gulp'),</code></pre>
-<pre class="fragment" data-fragment-index="1"><code class="lang-javascript">  sass = require('gulp-sass'),</code></pre>
-<pre class="fragment" data-fragment-index="2"><code class="lang-javascript">  autoprefixer = require('gulp-autoprefixer'),</code></pre>
-<pre class="fragment" data-fragment-index="3"><code class="lang-javascript">  csslint = require('gulp-csslint'),</code></pre>
-<pre class="fragment" data-fragment-index="4"><code class="lang-javascript">  minifyCss = require('gulp-minify-css'),</code></pre>
-<pre class="fragment" data-fragment-index="5"><code class="lang-javascript">  rename = require('gulp-rename'),</code></pre>
-<pre class="fragment" data-fragment-index="6"><code class="lang-javascript">  notify = require('gulp-notify');</code></pre><pre class="fragment" data-fragment-index="7"><code class="lang-javascript">
-gulp.task('styles', function() {</code></pre>
-<pre class="fragment" data-fragment-index="8"><code class="lang-javascript">  return gulp.src('./sass/**/*.scss')</code></pre>
-<pre class="fragment" data-fragment-index="9"><code class="lang-javascript">    .pipe(sass())</code></pre>
-<pre class="fragment" data-fragment-index="10"><code class="lang-javascript">    .pipe(autoprefixer({browsers: ['last 2 versions']}))</code></pre>
-<pre class="fragment" data-fragment-index="11"><code class="lang-javascript">    .pipe(csslint())
-    .pipe(csslint.reporter())</code></pre>
-<pre class="fragment" data-fragment-index="12"><code class="lang-javascript">    .pipe(gulp.dest('./css'))</code></pre>
-<pre class="fragment" data-fragment-index="13"><code class="lang-javascript">    .pipe(rename({suffix: '.min'}))</code></pre>
-<pre class="fragment" data-fragment-index="14"><code class="lang-javascript">    .pipe(minifyCss())</code></pre>
-<pre class="fragment" data-fragment-index="15"><code class="lang-javascript">    .pipe(gulp.dest('./css'))</code></pre>
-<pre class="fragment" data-fragment-index="16"><code class="lang-javascript">    .pipe(notify({message: 'Styles task complete'}));</code></pre>
-<pre class="fragment" data-fragment-index="7"><code class="lang-javascript">});</code></pre></div>
-          </section>
-          <section>
-            <h2>Scripts task example</h2>
-
-<pre><code class="lang-javascript">gulp.task('scripts', function() {
-  return gulp.src('./scripts/**/*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
-    .pipe(concat('main.js'))
-    .pipe(gulp.dest('./js'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
-    .pipe(gulp.dest('./js'))
-    .pipe(notify({ message: 'Scripts task complete' }));
-});</code></pre>
-          </section>
-          <section>
-            <h2>Lets Merge them</h2>
-
-<pre><code class="lang-javascript">gulp.task('default', function() {
-  gulp.start('styles', 'scripts');
-});</code></pre>
-          </section>
-          <section>
-            <h3>Don't want to type anything never?</h3>
-            <p>Leave gulp keeps an eye on the files!</p>
-
-<pre><code class="lang-javascript">gulp.task('watch', function() {
-  gulp.watch('./sass/**/*.scss', ['styles']);
-  gulp.watch('./scripts/**/*.js', ['scripts']);
-});</code></pre>
-<p>and change <code style="color: #a6e22e;">default</code> task</p>
-<pre><code class="lang-javascript">gulp.task('default', function() {
-  gulp.start('watch');
-});</code></pre>
-          </section>
-          <section>
-            <h2>The tricky asynchronous</h2>
-
-            <aside class="notes">
-              <p>Show up example 05</p>
-            </aside>
-          </section>
-          <section>
-            <h2>Tips and tricks!</h2>
-
-            <aside class="notes">
-              <p>Split the tasks in files (This in reuse them in a future)</p>
-              <p>Don't reinvent the wheel (Reuse others configurations)</p>
-              <p>Build configs step by step (try every pipe)</p>
-              <p>Use some of the notofication tools (Bad error reporter)</p>
-              <p>Talk about gulp 4 release (Improved globs, tasks runners, better logs)</p>
-            </aside>
-          </section>
-        </section>
-        <section>
-          <h2>Easter Egg!</h2>
-          <h4>The name</h4>
-
-          <img class="fragment" src="/img/7eleven-logo.png" height="250px">
-          <img class="fragment" src="/img/big-gulp.jpg" height="250px">
-          <img class="fragment" src="/img/big-gulp-machine.jpg" height="250px">
+          <ul>
+            <li class="fragment">No need learning all platforms SDKs</li>
+            <li class="fragment">Wrap your web app within a mobile app</li>
+            <li class="fragment">Ease up your complex apps</li>
+          </ul>
 
           <aside class="notes">
-            <p>Some of you know from where do the name come from?</p>
-            <p>I'm going to give you my own theory but it is not confirmed</p>
-            <p>7 Eleven</p>
+            <p>Target all platforms</p>
+            <p>Include your site</p>
+            <p>Less complex parts of you app in cordova</p>
           </aside>
         </section>
         <section>
-          <h2>Who uses gulp?</h2>
-          <h4>Some trademarks that use gulp</h4>
-          <!-- Who uses gulp https://github.com/gulpjs/gulp/issues/540 -->
-          <p>
-            <img src="/img/netflix-logo.png" height="100px">
-            <img src="/img/nhl-logo.png" height="100px">
-            <img src="/img/ionic-logo.png" height="100px">
-            <img src="/img/dell-logo.png" height="100px">
-            <img src="/img/tumblr-logo.png" height="100px">
-            <img src="/img/godaddy-logo.jpg" height="100px">
-            <img src="/img/soundcloud-logo.png" height="100px">
-            <img src="/img/developers-logo.svg" height="100px">
-          </p>
+          <section>
+            <h2>Native & Hybrid & Web</h2>
 
-          <aside class="notes">
-            <p>These are some of the studios that are using gulp in their development workflow</p>
-          </aside>
+            <img class="stretch" src="/img/tech-stacks-mobile-app.png">
+          </section>
+          <section>
+            <h2>Native</h2>
+
+            <img class="stretch" src="/img/tech-stacks-native.png">
+
+            <ul>
+              <li>Single plarform affinity</li>
+              <li>Written with platform SDKs</li>
+              <li>Must be written for each platform</li>
+              <li>Access to all native APIs</li>
+              <li>Faster graphics performance</li>
+              <li>AppStore distribution</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Hybrid</h2>
+
+            <img class="stretch" src="/img/tech-stacks-hybrid.png">
+
+            <ul>
+              <li>Cross-platform affinity</li>
+              <li>Written with web technologies</li>
+              <li>Runs locally on the device, supports offline</li>
+              <li>Access to all native APIs</li>
+              <li>AppStore distribution</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Web</h2>
+
+            <img class="stretch" src="/img/tech-stacks-web.png">
+
+            <ul>
+              <li>Cross-platform affinity</li>
+              <li>Written with web technologies</li>
+              <li>Runs on web server, viewable on multiple devices</li>
+              <li>Centralized updates</li>
+              <li>No AppStore distribution</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Folder structure</h2>
+
+            <pre>
+              <code class="lang-shell">
+                .
+                ├── config.xml
+                ├── platforms
+                ├── plugins
+                └── www
+                    ├── css
+                    ├── img
+                    ├── js
+                    └── index.html
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Basics</h2>
+
+            <ul>
+              <li class="fragment">Cordova relies on a common config.xml file that provides information and setting parameters</li>
+              <li class="fragment">The app is implented as a web page, by default an index.html which is executed in a webview within the native app wrapper</li>
+              <li class="fragment">A plugin interface is available to communicate with native components from the webview. This enable you to invoke native code from JS</li>
+              <li class="fragment">Cordova does not provide any UI resources or MV* frameworks, only provides the runtime core in which those can execute. You can choose whichever 3rd party material you like.</li>
+            </ul>
+
+            <aside class="notes">
+              <p>config.xml follow the W3C specification for Packaged Web App</p>
+              <p>The app is implented as a web page by default an index.html</p>
+              <p>A plugin interface lets us communicate with natie components</p>
+              <p>Cordova does not provide any UI resources or MV* frameworks</p>
+            </aside>
+          </section>
+        </section>
+        <section>
+          <h2>Development Paths</h2>
+
+          <section>
+            <h4>Cross-Platform (CLI)</h4>
+            <ul>
+              <li>Targets all platforms</li>
+              <li>Workflow centered around the cordova utility (automatic building)</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4>Platform Centered</h4>
+            <ul>
+              <li>Lower level platform access</li>
+              <li>Specific scripts & manual building for each platform</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h2>Platform Support</h2>
+
+          <table>
+            <thead>
+              <tr><td></td><td>Mac</td><td>Linux</td><td>Windows</td></tr>
+            </thead>
+            <tbody>
+              <tr><td>Amazon Fire</td><td>X</td><td>X</td><td>X</td></tr>
+              <tr><td>Android</td><td>X</td><td>X</td><td>X</td></tr>
+              <tr><td>Blackberry</td><td>X</td><td>X</td><td>X</td></tr>
+              <tr><td>Firefox OS</td><td>X</td><td>X</td><td>X</td></tr>
+              <tr><td>iOS</td><td>X</td><td></td><td></td></tr>
+              <tr><td>Windows</td><td></td><td></td><td>X</td></tr>
+              <tr><td>Windows Phone 8</td><td></td><td></td><td>X</td></tr>
+            </tbody>
+          </table>
+
+        </section>
+        <section>
+          <h2>Command-Line Interface (CLI)</h2>
+
+          <section>
+            <h4>Installing cordova</h4>
+            <pre>
+              <code class="lang-shell"> $ npm install -g cordova </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>New project</h4>
+            <pre>
+              <code class="lang-shell"> $ cordova create hello com.example.hello HelloWorld </code>
+            </pre>
+
+            <aside class="notes">
+              <p>1º arg: folder name (required)</p>
+              <p>2º arg: reverse domain-style id (optional)</p>
+              <p>3º arg: app title (optional)</p>
+              <p>The optional options can be edited after in the config.xml</p>
+              <p>This will create the structure seen previously.</p>
+            </aside>
+          </section>
+
+          <section>
+            <h4>Add platforms</h4>
+            <pre>
+              <code class="lang-shell"> $ cd hello </code>
+              <code class="lang-shell fragment"> $ cordova platform add {platform} </code>
+              <code class="lang-shell fragment"> $ cordova platform ls {platform} </code>
+              <code class="lang-shell fragment"> $ cordova platform remove|rm {platform} </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Build app</h4>
+            <pre>
+              <code class="lang-shell"> $ cordova build {platform} </code>
+            </pre>
+            <pre class="fragment">
+              <code class="lang-shell">
+ $ cordova prepare {platform}
+ $ cordova compile {platform}
+              </code>
+            </pre>
+
+            <aside class="notes">
+              <p>Platform is optional, it build a specific target, no platform arg then it build all targets</p>
+            </aside>
+          </section>
+
+          <section>
+            <h4>Test app</h4>
+            <pre>
+              <code class="lang-shell"> $ cordova emulate {platform} </code>
+              <code class="lang-shell"> $ cordova run {platform} </code>
+            </pre>
+            <aside class="notes">
+              <p>Probably with some platforms you'll need to configure at least one emulator</p>
+              <p>If your device is plugged then will try to install the app</p>
+            </aside>
+          </section>
+
+          <section>
+            <h4>Add Plugins</h4>
+            <pre>
+              <code class="lang-shell"> $ cordova plugin search {text} </code>
+              <code class="lang-shell fragment"> $ cordova plugin add {plugin} </code>
+              <code class="lang-shell fragment"> $ cordova plugin ls {plugin} </code>
+              <code class="lang-shell fragment"> $ cordova plugin remove|rm {plugin} </code>
+            </pre>
+            </pre>
+            <aside class="notes">
+              <p>Probably with some platforms you'll need to configure at least one emulator</p>
+              <p>If your device is plugged then will try to install the app</p>
+            </aside>
+          </section>
         </section>
         <section>
           <style>
