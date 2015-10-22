@@ -39,6 +39,25 @@
         margin-top: -20px !important;
         box-shadow: none !important;
       }
+      .double { width: 80%; margin: 0 auto; }
+      .double li {
+        list-style: none;
+        width: 50%;
+      }
+      .double li:nth-child(odd) {
+
+        float:left;
+      }
+      .double li:nth-child(even) {
+
+        float:right;
+      }
+
+      .imageAdjacent {
+        float:right;
+        width:60%;
+      }
+
     </style>
 
     <!--[if lt IE 9]>
@@ -55,7 +74,7 @@
         <section>
           <br />
           <img src="img/cordova-logo-newbrand-textonly.svg">
-          <img  src="img/cordova-bot.png">
+          <img src="img/cordova-bot.png">
 
           <aside class="notes">
             <p>Introduction</p>
@@ -105,7 +124,7 @@
 
             <img class="stretch" src="img/tech-stacks-native.png">
 
-            <ul>
+            <ul class="imageAdjacent">
               <li>Single plarform affinity</li>
               <li>Written with platform SDKs</li>
               <li>Must be written for each platform</li>
@@ -119,7 +138,7 @@
 
             <img class="stretch" src="img/tech-stacks-hybrid.png">
 
-            <ul>
+            <ul class="imageAdjacent">
               <li>Cross-platform affinity</li>
               <li>Written with web technologies</li>
               <li>Runs locally on the device, supports offline</li>
@@ -132,7 +151,7 @@
 
             <img class="stretch" src="img/tech-stacks-web.png">
 
-            <ul>
+            <ul class="imageAdjacent">
               <li>Cross-platform affinity</li>
               <li>Written with web technologies</li>
               <li>Runs on web server, viewable on multiple devices</li>
@@ -163,10 +182,11 @@
             <h2>Basics</h2>
 
             <ul>
-              <li class="fragment">Cordova relies on a common config.xml file that provides information and setting parameters</li>
-              <li class="fragment">The app is implented as a web page, by default an index.html which is executed in a webview within the native app wrapper</li>
-              <li class="fragment">A plugin interface is available to communicate with native components from the webview. This enable you to invoke native code from JS</li>
-              <li class="fragment">Cordova does not provide any UI resources or MV* frameworks, only provides the runtime core in which those can execute. You can choose whichever 3rd party material you like.</li>
+              <li class="fragment">Cordova only provides the runtime core in which those can execute.</li>
+              <li class="fragment">Cordova relies on a common config.xml file that provides information and setting parameters.</li>
+              <li class="fragment">The app is implented as a web page, by default an index.html which is executed in a webview within the native app wrapper.</li>
+              <li class="fragment">A plugin interface is available to communicate with native components from the webview. This enable you to invoke native code from JS.</li>
+              <li class="fragment">Cordova does not provide any UI resources or MV* framework.</li>
             </ul>
 
             <aside class="notes">
@@ -197,23 +217,30 @@
           </section>
         </section>
         <section>
-          <h2>Platform Support</h2>
-
-          <table>
-            <thead>
-              <tr><td></td><td>Mac</td><td>Linux</td><td>Windows</td></tr>
-            </thead>
-            <tbody>
-              <tr><td>Amazon Fire</td><td>X</td><td>X</td><td>X</td></tr>
-              <tr><td>Android</td><td>X</td><td>X</td><td>X</td></tr>
-              <tr><td>Blackberry</td><td>X</td><td>X</td><td>X</td></tr>
-              <tr><td>Firefox OS</td><td>X</td><td>X</td><td>X</td></tr>
-              <tr><td>iOS</td><td>X</td><td></td><td></td></tr>
-              <tr><td>Windows</td><td></td><td></td><td>X</td></tr>
-              <tr><td>Windows Phone 8</td><td></td><td></td><td>X</td></tr>
-            </tbody>
-          </table>
-
+          <section>
+            <h2>Platform Support</h2>
+            <table>
+              <thead>
+                <tr><td></td><td>Mac</td><td>Linux</td><td>Windows</td></tr>
+              </thead>
+              <tbody>
+                <tr><td>Amazon Fire</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                <tr><td>Android</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                <tr><td>Blackberry</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                <tr><td>Firefox OS</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                <tr><td>iOS</td><td>✓</td><td></td><td></td></tr>
+                <tr><td>Windows</td><td></td><td></td><td>✓</td></tr>
+                <tr><td>Windows Phone 8</td><td></td><td></td><td>✓</td></tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <h2>Platform Support</h2>
+            <img src="img/platform-support.png">
+          </section>
+          <section>
+            <img class="stretch" src="img/platform-apis.png">
+          </section>
         </section>
         <section>
           <h2>Command-Line Interface (CLI)</h2>
@@ -293,29 +320,193 @@
               <p>If your device is plugged then will try to install the app</p>
             </aside>
           </section>
+          <section>
+            <h4>Merges</h4>
+            <pre>
+              <code class="lang-shell">
+                .
+                └── merges
+                    └── android
+                    |    ├── css
+                    |    |   └── theme.css
+                    |    └── js
+                    |        └── android.js
+                    └── ios
+                        ├── css
+                        |   └── theme.css
+                        └── js
+                            └── ios.js
+              </code>
+            </pre>
+            </pre>
+            <aside class="notes">
+              <p>Mirrors the directory structure of the www source tree, allowing you to override or add files as needed</p>
+              <p>Preventing the lack of a file in other platforms create that file in www empty</p>
+            </aside>
+          </section>
         </section>
         <section>
-          <style>
-          .blink {
-            animation: blink .8s infinite;
-            -webkit-animation: blink .8s infinite;
-          }
-          @keyframes blink {
-            to {
-              opacity: 0;
-            }
-          }
-          @-webkit-keyframes blink {
-            to {
-              opacity: 0;
-            }
-          }
-          </style>
-          <h2 style="color: #fff;"><code class="lang-javascript">$ <span style="color: #EB4A4B;">gulp</span> <span style="color: #a6e22e;">questions</span><span class="blink">_</span></code></h2>
+          <h2>config.xml</h2>
+          <section>
+            <pre>
+              <code class="lang-xml">
+<widget id="com.example.hello" version="0.0.1">
+  <name>HelloWorld</name>
+  <description>
+      A sample Apache Cordova application that responds to
+      the deviceready event.
+  </description>
+  <author email="dev@callback.apache.org" href="http://cordova.io">
+      Apache Cordova Team
+  </author>
+  <content src="index.html"></content>
+  <access origin="*"></access>
+</widget>
+              </code>
+            </pre>
+            <aside class="notes">
+              <p>name: app title</p>
+              <p>desc. & author: metadata and contact info</p>
+              <p>content: defines the app starting page (index.html by default)</p>
+              <p>access: set of external domains the app is allowed to communicate</p>
+            </aside>
+          </section>
+          <section>
+            <h4>preference</h4>
+            <pre>
+              <code class="lang-xml">
+<!-- Global -->
+<preference name="Fullscreen" value="true"></preference>
+<!-- Multi-platform (applies only in Android and iOS)-->
+<preference name="DisallowOverscroll" value="true"></preference>
+<!-- Specific-->
+<platform name="android">
+  <preference name="Orientation" value="sensorLandscape"></preference>
+</platform>
+              </code>
+            </pre>
+            <aside class="notes">
+              <p>global, multi-platform, specific</p>
+            </aside>
+          </section>
         </section>
-        <section data-background-color="#EB4A4B">
-          <p style="font-size: 3em; color: #fff; font-family: 'Damion', cursive;">Thanks!</p>
+        <section>
+          <h2>hooks</h2>
+          <section>
+          <pre>
+            <code class="lang-xml">
+<hook type="after_plugin_install" src="scripts/afterPlugInstall.js"></hook>
+            </code>
+          </pre>
+          <aside class="notes">
+            <p>extend default Cordova functionality</p>
+            <p>building lifecycle</p>
+          </aside>
         </section>
+        <section>
+          <pre>
+            <code class="lang-shell">
+after_build             after_compile           after_clean
+after_docs              after_emulate           after_platform_add
+after_platform_rm       after_platform_ls       after_plugin_add
+after_plugin_ls         after_plugin_rm         after_plugin_search
+after_plugin_install    after_prepare           after_run
+after_serve             before_build            before_clean
+before_compile          before_docs             before_emulate
+before_platform_add     before_platform_rm/     before_platform_ls
+before_plugin_add       before_plugin_ls        before_plugin_rm
+before_plugin_search/   before_plugin_install   before_plugin_uninstall
+before_prepare          before_run              before_serve
+pre_package // Windows and Windows Phone only
+            </code>
+          </pre>
+        </section>
+      </section>
+      <section>
+        <h2>Development</h2>
+        <section>
+          <h4>Cordova events</h4>
+
+          <ul class="double">
+            <li>deviceready</li>
+            <li>pause</li>
+            <li>resume</li>
+            <li>backbutton</li>
+            <li>menubutton</li>
+            <li>searchbutton</li>
+            <li>startcallbutton</li>
+            <li>endcallbutton</li>
+            <li>volumedownbutton</li>
+            <li>volumeupbutton</li>
+          </ul>
+        </section>
+        <section>
+          <h4>Cordova events</h4>
+
+            <pre>
+              <code class="lang-html">
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8">
+  // Wait for device API libraries to load
+  function onLoad() {
+      document.addEventListener("deviceready", onDeviceReady, false);
+  }
+  // device APIs are available
+  function onDeviceReady() {
+      // Now safe to use device APIs
+  }
+</script>
+              </code>
+            </pre>
+        </section>
+        <section>
+          <h4>Storage</h4>
+          <ul>
+            <li>LocalStorage</li>
+            <li>WebSQL</li>
+            <li>IndexedDB</li>
+            <li>Plugin-Based Options</li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <h2>Plugins</h2>
+        <ul class="double" style="font-size: 0.75em">
+          <li>Battery Status</li>
+          <li>Camera</li>
+          <li>Console</li>
+          <li>Contacts</li>
+          <li>Device</li>
+          <li>Device Motion (Accelerometer)</li>
+          <li>Device Orientation (Compass)</li>
+          <li>Dialogs</li>
+          <li>FileSystem</li>
+          <li>File Transfer</li>
+          <li>Geolocation</li>
+          <li>Globalization</li>
+          <li>InAppBrowser</li>
+          <li>Media</li>
+          <li>Media Capture</li>
+          <li>Network Information (Connection)</li>
+          <li>Splashscreen</li>
+          <li>Vibration</li>
+          <li>StatusBar</li>
+          <li>Whitelist</li>
+          <li>Legacy Whitelist</li>
+        </ul>
+        <aside class="notes">
+          <p>cordova provided</p>
+          <p>search more on npm</p>
+          <p>you can develop your own plugins</p>
+        </aside>
+      </section>
+      <section>
+        <img src="img/cordova-bot.png">
+        <a style="display:block" href="https://cordova.apache.org/docs">cordova.apache.org/docs</a>
+      </section>
+      <section>
+        <p style="font-size: 3em; color: #fff; font-family: 'Damion', cursive;">Thanks!</p>
+      </section>
       </div>
 
     </div>
